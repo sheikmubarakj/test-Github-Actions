@@ -1,8 +1,14 @@
+name: 'gtAction Workflow'
+
 on: push
 jobs:
     first-job-id:
         runs-on: ubuntu-latest
+
         steps:
+        - name: Checking our the repo    
+          uses: actions/checkout@v6
+          
         - name: "Executing first step"
           run: echo "Executing my first step.."
         
