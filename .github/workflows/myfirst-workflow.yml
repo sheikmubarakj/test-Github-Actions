@@ -1,0 +1,13 @@
+on: push
+jobs:
+    first-job-id:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "Executing first step"
+          run: echo "Executing my first step.."
+        
+        - name: "Listing repos"
+          run: ls
+        
+        - name: "Reading Readme file"
+          run: cat README.md
