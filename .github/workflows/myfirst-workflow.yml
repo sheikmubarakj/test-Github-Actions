@@ -27,4 +27,4 @@ jobs:
       run: |
        ls -la
        chmod +x listing-file.sh
-       ./listing-file
+       ./listing-file.sh
