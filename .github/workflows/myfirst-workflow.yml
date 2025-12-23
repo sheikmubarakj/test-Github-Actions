@@ -13,5 +13,12 @@ jobs:
     - name: "Combined Step"
       run: | 
        echo "My First Step..."
+       sleep 10
        touch newfile.txt
-       ls
+  
+  Job-2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: "Listing Files"
+      run: ls -la
