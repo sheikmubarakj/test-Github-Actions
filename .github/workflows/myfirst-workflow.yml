@@ -23,8 +23,13 @@ jobs:
     - name: "Checkout Repo"
       uses: actions/checkout@v6
 
+    - name: "Installing library"
+      run: sudo apt-get install -y cowsay
+
+    - name: "Running cowsay"
+      run: cowsay -f dragon "I am a dragon"
+
     - name: "Listing Files"
       run: |
-       ls -la
        chmod +x listing-file.sh
        ./listing-file.sh
