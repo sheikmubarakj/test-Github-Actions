@@ -21,4 +21,6 @@ jobs:
 
     steps:
     - name: "Listing Files"
-      run: ls -la
+      run: |
+       chmod +x 
+       ./listing-file
