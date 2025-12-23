@@ -1,4 +1,4 @@
-name: 'github Actions'
+name: 'githubActions'
 
 on: [push]
 
@@ -7,11 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: "Checking out my repo"
+      uses: "actions/checkout@v6"
+
     - name: "First Step"
       run: echo "My First Step..."
 
-    - name: "Creating new file.."
+    - name: "Second Step: Creating File"
       run: touch newfile.txt
 
-    - name: "Listing Files"
+    - name: "Third Step: Listing Files"
       run: ls
