@@ -3,9 +3,15 @@ name: 'github Actions'
 on: [push]
 
 jobs:
-  first-job-id:
+  Job-1:
     runs-on: ubuntu-latest
 
     steps:
     - name: "First Step"
       run: echo "My First Step..."
+
+    - name: "Creating new file.."
+      run: touch newfile.txt
+
+    - name: "Listing Files"
+      run: ls
