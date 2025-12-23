@@ -10,11 +10,8 @@ jobs:
     - name: "Checking out my repo"
       uses: "actions/checkout@v6"
 
-    - name: "First Step"
-      run: echo "My First Step..."
-
-    - name: "Second Step: Creating File"
-      run: touch newfile.txt
-
-    - name: "Third Step: Listing Files"
-      run: ls
+    - name: "Combined Step"
+      run: | 
+       echo "My First Step..."
+       touch newfile.txt
+       ls
