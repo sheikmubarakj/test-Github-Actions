@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: "Checkout Repo"
+      run: actions/checkout@v6
     - name: "Listing Files"
       run: |
        ls -la
