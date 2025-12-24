@@ -37,6 +37,7 @@ jobs:
   
   Job-3:
     needs: Job-2
+    runs-on: ubuntu-latest
     steps:
     - name: "Executing Job-3"
       run: | 
