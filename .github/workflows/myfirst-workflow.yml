@@ -17,6 +17,7 @@ jobs:
        touch newfile.txt
   
   Job-2:
+    needs: Job-1
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +34,11 @@ jobs:
       run: |
        chmod +x listing-file.sh
        ./listing-file.sh
+  
+  Job-3:
+    needs: Job-2
+    steps:
+    - name: "Executing Job-3"
+      run: | 
+        sleep 10
+        "All Jobs Completed.."
