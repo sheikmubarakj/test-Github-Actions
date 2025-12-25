@@ -26,8 +26,8 @@ jobs:
     needs: Job1
     runs-on: ubuntu-latest
     steps:
-    - name: "Downloading artifact File"
-      uses: actions/download-artifcats@v4
+    - name: "Download my-artifact"
+      uses: actions/download-artifact@v4
       with: 
         name: dragon-artifact
 
@@ -41,7 +41,7 @@ jobs:
     needs: Job2
     runs-on: ubuntu-latest
     steps:
-    - name: "Downloading artifact"
+    - name: "Download my-artifact"
       uses: actions/download-artifact@v4
       with:
         name: dragon-artifact
