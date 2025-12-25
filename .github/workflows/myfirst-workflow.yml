@@ -7,5 +7,47 @@ jobs:
   Job1:
     runs-on: ubuntu-latest
     steps:
-    - name: "Running linux Command"
-      run: ls
+    - name: "Checking Out Repo"
+      uses: actions/checkout@v4
+    
+    - name: "Installing cowsay package"
+      run: sudo apt get install cowsay
+
+    - name: "Generating ASCII cowsay diagram"
+      run: cowsay -f dragon "Run for cover, Am dragon" >> dragon.text
+
+    - name: "Uploading artifact"
+      uses: actions/upload-artifact@v4
+      with: 
+        name: dragon-artifact
+        path: dragon.txt
+
+  Job2:
+    needs: Job1
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Downloading artifact File"
+      uses: actions/download-artifcats@v4
+      with: 
+        name: dragon-artifact
+
+    - name: "Listing Files"
+      run: ls -la
+
+    - name: "Validating if file exist"
+      run: grep -i "dragon" dragon.text
+
+  Job3:
+    needs: Job2
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Downloading artifact"
+      uses: actions/download-artifact@v4
+      with:
+        name: dragon-artifact
+
+    - name: "Listing Files"
+      run: ls -la
+
+    - name: "Print Dragon.txt file"
+      run: cat dragon.txt
