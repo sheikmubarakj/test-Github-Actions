@@ -1,5 +1,5 @@
 name: "gitHubActions - Test"
-
+on: [push]
 jobs:
     Job-001:
       runs-on: ubuntu-latest
