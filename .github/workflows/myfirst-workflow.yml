@@ -1,45 +1,11 @@
-name: 'githubActions'
-
-on: [push]
+name: "gitHubActions - Test"
 
 jobs:
-  Job-1:
-    runs-on: ubuntu-latest
+    Job-001:
+      runs-on: ubuntu-latest
 
     steps:
-    - name: "Checking out my repo"
-      uses: "actions/checkout@v6"
+    - name: "Running ls command"
+      run: ls
 
-    - name: "Combined Step"
-      run: | 
-       echo "My First Step..."
-       sleep 10
-       touch newfile.txt
-  
-  Job-2:
-    needs: Job-1
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: "Checkout Repo"
-      uses: actions/checkout@v6
-
-    - name: "Installing library"
-      run: sudo apt-get install -y cowsay
-
-    - name: "Running cowsay"
-      run: cowsay -f dragon "I am a dragon"
-
-    - name: "Listing Files"
-      run: |
-       chmod +x listing-file.sh
-       ./listing-file.sh
-  
-  Job-3:
-    needs: Job-2
-    runs-on: ubuntu-latest
-    steps:
-    - name: "Executing Job-3"
-      run: | 
-        sleep 10
-        "All Jobs Completed.."
+      
