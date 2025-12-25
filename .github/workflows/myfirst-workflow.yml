@@ -1,11 +1,11 @@
 name: "gitHubActions"
 
+
 on: [push]
 
 jobs:
   Job1:
     runs-on: ubuntu-latest
-
-  steps:
-  - name: "Running linux command"
-    run: ls
+    steps:
+    - name: "Running linux Command"
+      run: ls
