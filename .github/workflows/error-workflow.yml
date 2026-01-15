@@ -1,9 +1,11 @@
-name: Indentation Error
+name: Intenation Error
 
-on: push
+on: [push]
 
 jobs:
- build:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-    - run: echo "Hello"
+      step: Say Hello
+    - run: echo "Hello, World!"
