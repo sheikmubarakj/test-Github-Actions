@@ -1,6 +1,7 @@
 name: Intenation Error
 
-on: [pull_request]
+on:
+  pull_request:
 
 jobs:
   build:
