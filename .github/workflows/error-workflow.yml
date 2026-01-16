@@ -1,14 +1,11 @@
 name: Intenation Error
 
 on:
-  pull_request:
+  push:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v6
-      
-      - name: View File
-        run: cat README.md
+      - name: Print Current Time
+        run: date
